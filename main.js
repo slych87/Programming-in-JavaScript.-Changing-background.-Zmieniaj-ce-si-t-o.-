@@ -1,14 +1,14 @@
 const slideList = [{
     img: "images/img1.jpg",
-    text: 'Pierwszy tekst'
+    text: 'First Text'
 },
 {
     img: "images/img2.jpg",
-    text: 'Drugi tekst'
+    text: 'Second Text'
 },
 {
     img: "images/img3.jpg",
-    text: 'Trzeci tekst'
+    text: 'Third Text'
 }];
 
 
@@ -46,17 +46,17 @@ const keyChangeSlide = (e) => {
     if (e.keyCode == 37 || e.keyCode == 39) {
         clearInterval(indexInterval);
         e.keyCode == 37 ? active-- : active++;
+
         if (active == slideList.length) {
             active = 0;
         } else if (active < 0) {
             active = slideList.length - 1;
         }
+
         image.src = slideList[active].img;
         h1.textContent = slideList[active].text;
         changeDot();
-        indexInterval = setInterval(changeSlide, time);
-
-        console.log(active);
+        indexInterval = setInterval(changeSlide, time)
     }
 }
 
